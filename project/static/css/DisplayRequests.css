@@ -1,0 +1,42 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    background-image: linear-gradient(215deg,rgba(195, 188, 179, 0.416),rgba(0, 0, 0, 0.8)),url(../HRR.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.399);
+    font-family:'Poppins',sans-serif;
+    opacity: 0.9;
+}
+.VacationReqeusts{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,18%);    
+    width: 600px;
+    height: 400px;
+    background-color: rgba(47, 45, 45, 0.677);
+    box-shadow: 10px 10px #000000;
+    border-radius: 15px;
+    color: rgb(200, 194, 194);
+}
+table{
+    padding: 65px;
+}
+button{
+    position: relative;
+    left: 15px;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.56);
+    color: rgb(200, 194, 194);
+    font-weight: bold;
+}
+footer{
+    position: relative;
+    bottom: -159px;
+}
+

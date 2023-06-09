@@ -1,0 +1,130 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\add.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="Stylesheet/AddEmployee.css">
+    <title>Human Resources WebSite</title>
+</head>
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+             </ul>
+        </nav>
+    </header>
+
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 id="title">Edit Employee Info </h1>
+                <p id="description">here you can update employee info to the system.</p>
+            </header>
+            {% comment %} method update with id
+            with alert
+            
+            {% endcomment %}
+            
+            <form id="form" action="update_employee_data/" method="post">
+            {% csrf_token %}
+            {%if var == False %}
+                <p id="check" style="color:red;font-style: oblique;font-weight: bold;">NO Such Employee with this ID</p>
+            {%elif var == True %}
+                <p id="check" style="color:rgb(27, 177, 27);font-style: oblique;font-weight: bold;">Employee information has edited successfully</p>
+            {% endif %}  
+                <div class="forminfo">
+                    <label for="ID"><strong>Employee ID </strong></label>
+                    <input type="number" name="E_id" id="E_id" class="formControl" placeholder="Enter Employee ID"
+                        required>
+                </div>
+                <div class="forminfo">
+                    <label for="name"><strong>First Name</strong></label>
+                    <input type="text" name="fn" id="fname" class="formControl" placeholder="Enter the first name"
+                    required  >
+                    <br>
+                    <label for="name"><strong>Last Name</strong></label>
+                    <input type="text" name="ln" id="lname" class="formControl" placeholder="Enter the last name"
+                    required  >
+                </div>
+                
+                <div class="forminfo">
+                    <label for="email"><strong>Employee Email </strong></label>
+                    <input type="email" name="email" id="email" class="formControl" placeholder="Enter email"required >
+                </div>
+                <div class="forminfo">
+                    <label for="phoneNumber"><strong>Phone number</strong></label>
+                    <input type="number" name="phone" id="phone" class="formControl" placeholder="Enter Phone number"
+                    required  >
+                </div>
+                <div class="forminfo">
+                    <label for="adress"><strong>Employee Adress</strong></label>
+                        
+                    <input type="text" name="adress" id="adress" class="formControl" placeholder="Enter Adress"
+                    required  >
+                </div>
+                <div class="forminfo">
+                    <label><strong>Gender:</strong></label>
+                    <label>
+                        <input type="radio" id="Male" value="Male" name="employee_gender">Male<br>
+                    </label>
+                    <label>
+                        <input type="radio" id="Female" value="Female" name="employee_gender"  >Female<br>
+                    </label>
+                </div>
+
+                <div class="forminfo">
+                    <label for="birthday"><strong>Date of Birth</strong></label>
+                    <input type="date" name="birthday" id="birthday" class="formControl"required >
+                </div>
+                <br>
+
+                <div class="forminfo">
+                    <select name="marital_status" id="marital_status" class="formControl">
+                        <option value="">Select Marital Status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Separated">Separated</option>
+                        <option value="Divorced">Divorced</option>
+                    </select>
+                </div>
+                <div class="forminfo">
+                    <label for="salary"><strong>Employee Salary</strong></label>
+                    <input type="number" name="salary" id="salary" class="formControl" placeholder="Enter the Salary"
+                        >
+                </div>
+                <br>
+                <div class="forminfo">
+                    <button type="Submit" class="formSubmit">UPDATE</button>
+                </div>
+            </form>
+            <br>
+            <footer>
+                <br>
+                Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+                <br>
+                Copy Right &copy; 2022
+                <br>
+            </footer>
+
+    </body>
+
+</html>

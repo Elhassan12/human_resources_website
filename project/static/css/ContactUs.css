@@ -1,0 +1,22 @@
+aside {
+    width: 40%;
+    margin: 10px 60px 90px 40px;
+    transform: translate(390px, 50px);
+    background-color: rgba(81, 81, 81, 0.741);
+    border: solid;
+    border-radius: 20px;
+    box-shadow: 8px 7px rgba(33, 33, 33, 0.814);;
+
+}
+pre {
+    font-family: 'Poppins', sans-serif;
+}
+.CtA {
+    text-decoration: none;
+    background-color: #1c1c1c;
+    color: white;
+    border: solid;
+    border-radius: 20px;
+    padding: 4px;
+    border: none;
+}

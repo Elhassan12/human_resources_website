@@ -1,0 +1,54 @@
+.SearchBox input[type="search"]{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border:3px solid black;
+    border-radius: 7px;
+    outline-style: initial;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.424);
+    padding: 10px;
+    width: 400px;
+    color: rgb(18, 18, 18);
+}
+.SearchBox button[type="submit"]{
+    position: absolute;
+    top: 47.4%;
+    left: 62%;
+    margin-left: 20px;
+    border:3px solid black;
+    border-radius: 7px;
+    outline-style: initial;
+    outline: none;
+    background-color: #fefcf900;
+    cursor: pointer;
+    padding: 10px;
+    color:rgb(6, 5, 5);
+    background-color: rgba(255, 255, 255, 0.424);
+    font-weight: bold;
+}
+.SearchBox button[type="submit"]:hover{
+    background-color: rgba(0, 0, 0, 0.293);
+}
+h2{
+    position:absolute;
+    bottom: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.487);
+    color: aliceblue;
+    padding: 30px 60px ;
+    border-radius: 10px;
+    border-bottom: #000008 5px solid;
+    
+}
+::placeholder{
+    color:rgba(13, 13, 13, 0.645)
+
+}
+footer{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+}

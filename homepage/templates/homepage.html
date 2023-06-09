@@ -1,0 +1,79 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="Stylesheet/HomePage.css">
+    <title>Human Resources WebSite</title>
+</head>
+
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+            </ul>
+            </li>
+        </nav>
+    </header>
+    <section class="S1">
+        <div class="s1Para">
+            <pre>
+                <h1>
+               International human resources experts
+               in-region for your team.</h1><h3>
+                    More than just software, our comprehensive solution is backed
+                    by a best-in-industry legal team and HR experts in each
+                    region where we do business. When you work with us, 
+                    there are no extra or hidden fees, and we’re there for you 
+                    every step of the way—from generating employment contracts 
+                    to running compliant payroll, offering competitive benefits,
+                    24/7/365 premium HR support, and more—we manage it all, 
+                    so you can manage your business.</h3></pre>
+        </div>
+        <img src="{% static 'image\bg2.jpg' %}" class="img1">
+    </section>
+    <section class="S1">
+        <div class="s1Para">
+            <pre>
+                <h1>
+                Manage your employees
+                successfully</h1><h3>
+                    Gather all your HR related information in one place
+                    See all the important information about each 
+                    department in a moment,
+                    and make access to sensitive information limited 
+                    to human resource managers only,
+                    or make other information available to all employees to view, 
+                    such as the employee handbook.
+                    Get alerts of new leave requests, assignment</h3>
+            </pre>
+            <img src="{% static 'image\bg2.jpg' %}" class="img2">
+        </div>
+    </section>
+    <footer>
+        <br>
+        Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+        <br>
+        Copy Right &copy; 2022
+        <br>
+    </footer>
+</body>
+
+</html>

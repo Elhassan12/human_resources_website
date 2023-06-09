@@ -1,0 +1,105 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\displayrequests_new.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources WebSite</title>
+</head>
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+             </ul>
+        </nav>
+    </header>
+        <!-- [In Table] This values for example not real we will impprove it next phase-->
+    <form method="Post" action="">
+        {% csrf_token %}
+        <div style="margin:0px;position:absolute;top:50%;left: 70%;" class="table">
+            <table style="background-color:white;" >
+                {% csrf_token %}
+                {% if var == True %}
+                {% for x in employees %} 
+                {% if forloop.first %}
+                <thead style="color:black;font-weight:bold;" >
+                    <td style="color:black;" >Employee ID</td>
+                    <td style="color:black;" >First Name</td>
+                    <td style="color:black;" >Last Name</td>
+                    <td style="color:black;" >Address</td>
+                    <td style="color:black;" >Email</td>
+                    <td style="color:black;" >Phone</td>
+                    <td style="color:black;" >Marital Status</td>
+                    <td style="color:black;" >Date of birth</td>
+                    <td style="color:black;" >Gender</td>
+                    <td style="color:black;" >Salary</td>
+                    <td style="color:black;" >Delete</td>
+                </thead>
+                {% endif %}
+                <thead style=" font-weight:bold;">
+                    <td style="color:black;" >{{x.employeeid}}</td>
+                    <td style="color:black;" >{{x.firstname}}</td>
+                    <td style="color:black;" >{{x.lastname}}</td>
+                    <td style="color:black;" >{{x.address}}</td>
+                    <td style="color:black;" >{{x.employee_Email}}</td>
+                    <td style="color:black;" >{{x.employee_phone}}</td>
+                    <td style="color:black;" >{{x.Marital_Status}}</td>
+                    <td style="color:black;" >{{x.date_of_birth}}</td>
+                    <td style="color:black;" >{{x.gender}}</td>
+                    <td style="color:black;" >{{x.Salary}}</td>
+                    <td  ><a style="border-radius: 15px;
+                                    width: 100px;
+                                    height: 30px;
+                                    padding:20px;
+                                    margin: 3px;
+                                    cursor: pointer;
+                                    color: white;
+                                    background-color: rgba(0, 0, 0, 0.604);
+                                    cursor: pointer;
+                                    box-shadow: 5px 5px black;
+                                    text-decoration:none" ; href="delete/{{ x.employeeid }}">Delete</a></td>
+                </thead >
+                {% endfor %} 
+                {%else %}
+                <p id="description" style="background-color: rgba(0, 0, 0, 0.604);
+                color: red;
+                width: 320px;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 20px;
+                transform: translate(105%,90%); 
+                ">NO Suggestions.</p>
+                {% endif %} 
+            </table>
+        </div>
+    </form><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <br>
+        Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+        <br>
+        Copy Right &copy; 2022
+        <br>
+        <br>
+    </footer>
+</body>
+</html>
+
+

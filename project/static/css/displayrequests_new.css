@@ -1,0 +1,63 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    background-image: linear-gradient(215deg,rgba(195, 188, 179, 0.416),rgba(0, 0, 0, 0.8)),url(../HRR.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.399);
+    font-family:'Poppins',sans-serif;
+    opacity: 0.9;
+}
+
+.table{
+    width: 70%;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-80%,-50%);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.table::-webkit-scrollbar{
+    display: none;
+}
+td{
+    color: #f3f3f3;
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+    border: 1px solid black;
+    padding: 10px;
+}
+td button{
+    font-weight: bold;
+    border: 1px solid #000008;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+td button:hover{
+    background-color: rgba(0, 0, 0, 0.487);
+}
+
+form #bt{
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    box-shadow: 0px 3px black;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}

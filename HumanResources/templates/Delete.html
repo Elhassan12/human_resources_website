@@ -1,0 +1,57 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\Search.css'%}" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="Stylesheet/HomePage.css">
+    <link rel="Stylesheet" href="Stylesheet/Delete.css">
+    <title>HR Resources</title>
+</head>
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+            </ul>
+            </li>
+        </nav>
+    </header>
+        {% comment %} 
+        method for delete retreive data and delete the Employee
+        {% endcomment %}
+        <form action="delete_emp/" class="SearchBox" method="post" >
+        {% csrf_token %}
+                <h2>search about Employee to delete</h2>
+                <br><br><br><br><br><br><br>
+                <input type="search" name="search"  placeholder="search about Employee">
+                <br>
+                <input type="submit" value="Search" >
+        </form>
+    <footer class="box2">
+                <br>
+                Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+                <br>
+                Copy Right &copy; 2022
+                <br>
+    </footer>
+    
+            
+</body>
