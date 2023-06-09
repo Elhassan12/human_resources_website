@@ -1,0 +1,73 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\SignIn.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="Stylesheet" href="Stylesheet/HomePage.css">
+            <link rel="Stylesheet" href="Stylesheet/SignIn.css">
+            <title>Human Resources WebSite</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        </head>
+    <body style="background-image: url({% static 'image\HRR.jpg' %});">
+        <header>
+            <nav>
+                <div class="LOGO">
+                    <h1><em>
+                            <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                        </em>
+                        <sup>
+                            <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                        </sup>
+                    </h1>
+                </div>
+                <ul>
+                    <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+                 </ul>
+            </nav>
+        </header>
+        
+        <form method="post" class="box1" action="checkmember/" style=" position: relative ;transform:translate(-50%,-80%);margin:0px">
+        {% csrf_token %}
+            {%if var == False %}
+             <p id="check" style="color:red;">Invalid Login</p>
+            {% endif %}  
+            <h1><strong>Login</strong></h1>
+            <div class="em">
+                <input type="text" placeholder="UserName" name="UserName" id="email">
+                <i class="fa fa-times u_times"></i>
+                <i class="fa fa-check u_check"></i>
+                <span id="sp1">invalid Username.</span>
+            </div>
+            <br>
+            <div class="pass">
+                <input type="password" placeholder="Password" name= "Password"id="passwords">
+                <i class="fa fa-times c_times"></i>
+                <i class="fa fa-check c_check"></i>
+                <span id="sp2">invalid password.</span>
+                </div> 
+            <br>
+            <input type="submit"  value="Login" id="signin">
+            <br>
+            <a href="forgetpassword" id="forgetpass"><ins>Forget Password?</ins></a>
+            <a href="signupCustomer" id="signupcustomer"><ins>SignUP</ins></a>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer style=" bottom:0px;" class="box2">
+            <br>
+            Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+            <br>
+            Copy Right &copy; 2022
+            <br>
+        </footer>
+       
+        <script src="{% static 'js\login.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HumanResourses.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources WebSite</title>
+    <link rel="Stylesheet" href="Stylesheet/HumanResourses.css">
+</head>
+
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+            </ul>
+            </li>
+
+        </nav>
+    </header>
+    <div id="sdiv">
+    <section class="hrsrcS1" id="s1">
+        <a href="AddEmployee"><button type="button">
+                <span id="but1">Add Employee</span>
+            </button></a><br>
+        <pre><strong>
+            Click the federal or state tab. 
+            Click the appropriate button 
+            In the [Add Customer Form] 
+            dialog,click the Custom 
+            Paragraphs tab.
+            Click the Add Employee, name 
+            the paragraph,
+            and click Submit.</strong>
+        </pre>
+    </section>
+
+    <section class="hrsrcS1" id="s2">
+        <a href="UpdateChoices" ><button type="">
+                <span id="but2">Update Customer Info</span>
+            </button></a><br>
+        <pre>
+            <strong>
+            
+            
+              Click Update Customer Info
+              to modify Customer data.
+            </strong>
+        </pre>
+    </section>
+
+
+     <section class="hrsrcS1" id="s3">
+        <a href="Delete" ><button type="button">
+                Delete Customer Info
+            </button></a><br>
+        <pre>
+            <strong>
+
+
+              Click Delete Customer Info
+              to Delete Customer data.
+            </strong>
+        </pre>
+    </section>
+
+
+    <section class="hrsrcS1" id="s4">
+        <a href="Search" ><button type="button" class="bs4">
+                <span id="but4">Search</span> 
+            </button></a><br>
+        <pre>
+            <strong>
+              
+              
+              Click Search to Search 
+              About Some Customer.
+              </strong>
+        </pre>
+    </section>
+</div>
+<br><br>
+    <footer>
+        <br>
+        Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+        <br>
+        Copy Right &copy; 2022
+        <br>
+    </footer>
+
+</body>
+
+</html>

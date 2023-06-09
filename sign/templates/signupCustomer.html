@@ -1,0 +1,93 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\signup.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+
+  {% comment %} 
+   table for sign up and sign in
+   method addmember,checkmember
+  {% endcomment %}
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="Stylesheet" href="Stylesheet/SingUp.css">
+            <link rel="Stylesheet" href="Stylesheet/HomePage.css">
+            <title>Human Resources WebSite</title>
+            
+        </head>
+    <body style="background-image: url({% static 'image\HRR.jpg' %});">
+        <header>
+            <nav>
+                <div class="LOGO">
+                    <h1><em>
+                            <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                        </em>
+                        <sup>
+                            <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                        </sup>
+                    </h1>
+                </div>
+                <ul>
+                    <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                    <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+                 </ul>
+            </nav>
+        </header>
+    <body>
+        <div class="container">
+            <form action="addmember/" method="post" class="container2">
+                {% csrf_token %}
+                <h1>sign up</h1>
+                <h3>personal info</h3>
+                <div class="first">
+                    <input type="text" required placeholder="Firstname" name='Firstname'>
+                    <input type="text" placeholder="Lastname" name='lastname' required>
+                </div>
+                <div class="first">
+                    <input  id="us" type="text" placeholder="UserName" name='UserName' required>
+                    <input type="email" placeholder="E-mail" name="E-mail" required>
+                    <div class="fir">
+                        <span id="sp3">at least 10 character</span>
+                    </div>
+                </div>
+                <div class="first">
+                    <input id="pass" type="password" placeholder="password" name="password" required>
+                    <input id="cpass" type="password" placeholder="confirm password" required>
+                    <div class="sec">
+                        <span id="sp4">at least 10 character</span>
+                        <span id="sp5">password not matching</span>
+                        <span id="sp6">password matching</span>
+                    </div>
+                </div>
+                <div class="first">
+                    <input id="pass" type="text" placeholder="phone Number" name="phone Number" maxlength="15" required>
+                    <div class="sec">
+                        <span id="sp4">at least 10 character</span>
+                        <span id="sp5">password not matching</span>
+                        <span id="sp6">password matching</span>
+                    </div>
+                </div>
+                <h3>company info</h3>
+                <div class="first">
+                    <input type="text" placeholder="Company name" name="Company name" required>
+                    <input type="text" placeholder="Fax" name="Fax" required>
+                </div>
+                <input type="submit" id="submit" value="Sign Up">
+                <input type="reset" >
+            </form>
+        </div>
+            <footer>
+                <br>
+                Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+                <br>
+                Copy Right &copy; 2022
+                <br>
+            </footer>
+            {% comment %} an alert for sign successfully {% endcomment %}
+            <script src="{% static 'js\signup.js' %}"></script>
+            
+    </body>
