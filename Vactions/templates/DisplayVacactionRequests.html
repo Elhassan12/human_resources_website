@@ -1,0 +1,87 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\displayrequests_new.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources WebSite</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Stylesheet/DisplayRequests.css">
+    <link rel="stylesheet" href="Stylesheet/HomePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body style="background-image: url({% static 'image\HRR.jpg' %});">
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+             </ul>
+        </nav>
+    </header>
+        <!-- [In Table] This values for example not real we will impprove it next phase-->
+        {% comment %} {% csrf_token %} {% endcomment %}
+        <form method="get" action="DisplayVacactionRequests" >
+        <div  class="table">
+            <table >
+                {% csrf_token %}
+                {% for x in vactions %} 
+                {% if forloop.first %}
+                <thead style="color:black;font-weight:bold" >
+                    <td style="color:black;padding:20px;" >EID</td>
+                    <td style="color:black;padding:20px;" >First Name</td>
+                    <td style="color:black;padding:20px;" >Last Name</td>
+                    <td style="color:black;padding:20px;" >No of Days</td>
+                    <td style="color:black;padding:20px;" >Start Date</td>
+                    <td style="color:black;padding:20px;" >End Date</td>
+                    <td style="color:black;padding:20px;" >Approve button</td>
+                    <td style="color:black;padding:20px;" >Reject button</td>
+                </thead>
+                {% endif %}
+                {% if  x.status == '0' %}
+                <thead style=" font-weight:bold;">
+                    <td style="color:black;padding:20px;" >{{x.emp_id}}</td>
+                    <td style="color:black;padding:20px;" >{{x.ft_name}}</td>
+                    <td style="color:black;padding:20px;" >{{x.lt_name}}</td>
+                    <td style="color:black;padding:20px;" >{{x.num_days}}</td>
+                    <td style="color:black;padding:20px;" >{{x.start_date}}</td>
+                    <td style="color:black;padding:20px;" >{{x.end_date}}</td>
+                    <td><form method="post" action="apporve/{{ x.emp_id }}">{% csrf_token %}<button style="cursor:pointer"  type="submit">Approve</button></form></td>
+                    <td><form method="post" action="reject/{{ x.emp_id }}">{% csrf_token %}<button  style="cursor:pointer" type="submit">Reject</button></form></td>
+                    {% comment %} <td style="color:black;" ><input name="{{x.id}}" value="1"  type="radio">Approve</input></td>
+                    <td style="color:black;" ><input name="{{x.id}}" value="2"  type="radio">Reject</input></td> {% endcomment %}
+                </thead >
+                {% endif %}
+                {% endfor %} 
+                {% comment %} status/{{ x.employeeid }} {% endcomment %}
+            </table>
+        </div>
+        <button id="bt"style="cursor:pointer" type="submit">Save</button>
+    </form>
+    <br><br><br><br><br><br><br><br><br>
+    <footer>
+        <br>
+        Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+        <br>
+        Copy Right &copy; 2022
+        <br>
+        <br>
+    </footer>
+</body>
+</html>
+
+

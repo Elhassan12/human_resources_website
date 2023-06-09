@@ -1,0 +1,87 @@
+{%load static %}
+<link rel="stylesheet" href="{% static 'css\HomePage.css'%}" />
+<link rel="stylesheet" href="{% static 'css\new.css'%}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources WebSite</title>
+    <link rel="stylesheet" href="Stylesheet/Vactions.css">
+    <link rel="stylesheet" href="Stylesheet/HomePage.css">
+</head>
+<body  style="background-image: url({% static 'image\HRR.jpg' %});">  
+    <header>
+        <nav>
+            <div class="LOGO">
+                <h1><em>
+                        <span style="color: #767979; font: akronim;">H</span><sub>R</sub>
+                    </em>
+                    <sup>
+                        <I><span style="color: #767979;">Human</span> <sub> Resources</sub></I>
+                    </sup>
+                </h1>
+            </div>
+            <ul>
+                <li> <a href="http://127.0.0.1:8000/homepage"  title="Home Page"><b> Home</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/HumanResources/"  title="HR Resources"><b> HR Resources</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/ContactUs/"  title="Contact US"><b>Contact Us</b></a></li>
+                <li> <a href="http://127.0.0.1:8000/sign/LogIn"  title="Sign In"><b>Sign In</b></a></li>
+            </ul>
+            </li>
+        </nav>
+    </header>
+    <div>
+        <br> <br> <br>
+        <form action="Displayvactions/" class="Vacform" style="height:720px; margin:0px;top:60%;" method="post">
+            {% csrf_token %}
+            {%if var == False %}
+             <p style="background:none;box-shadow:none;margin:0px;transform: translate(0%,30%);" id="check" >employee not found..!</p>
+             {% endif %}  
+            <div class="EID">
+            <label for="EID"><strong>Employee ID</strong></label><br>
+            <input type="number" id="EID" name="EID" placeholder="Employee ID" required>
+            </div>
+            <div class="NOVac">
+                <label for="fname"><strong>First Name</strong></label><br>
+                <input type="text" name="fn" id="fname" placeholder="Enter the first name" required><br>
+                <label for="lname"><strong>Last Name</strong></label><br>
+                <input type="text" name="ln" id="lname" class="formControl" placeholder="Enter the last name"required>
+            </div>
+            <div class="Date">
+                <label for="sd"><strong>Start Date</strong></label>
+                <input type="date" name="StartDate" id="sd" required><br>
+                <label for="ed"><strong>End Date</strong></label><br>
+                <input type="date" name="EndDate" id="ed" required><br>
+            </div>
+            <br>
+            <div class="EID">
+                <label for="EID"><strong>Nnmber Of Days</strong></label><br>
+                <input type="text" id="EID" name="numberofdays" placeholder="Employee ID" required>
+                </div>
+            <div class="Reasonform">
+                <label for="RSN"><strong>What's reason?</strong></label><br>
+                <textarea name="Reason" id="RSN" cols="37" rows="5" placeholder="Write Your Reason..."></textarea>
+            </div>
+            <div class="BUTTON">
+                <button type="submit" id="Submit"><strong>Submit</strong></button>
+            </div>
+            <div class="BUTTON">
+                <a href="DisplayVacactionRequests" title="Requests">
+                <button type="button" id="requests"><strong>GO to vaction requests Dirctly</strong></button>
+                </a>
+            </div>
+        </form>
+    </div>
+   
+    
+    <footer>
+        <br>
+        Made By SWE<sub>s</sub> TEAM <SPAN style="color: rgb(215, 215, 32); font-size: 20px;">&hearts;</SPAN>
+        <br>
+        Copy Right &copy; 2022
+        <br>
+    </footer>
+</body>
+</html>

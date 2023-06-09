@@ -1,0 +1,86 @@
+
+.box3{
+    background-color: rgba(0, 0, 0, 0.629);
+    padding: 50px;
+    width: 400px;
+    height: 200px;
+    position: relative ;
+    text-align: center;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 300px;
+    border-radius: 19px;
+    border-color: #221456;
+    border-style: solid;
+}
+
+h1{
+    position: absolute; 
+    color: rgb(255, 255, 255);
+    top:10%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+h2{
+    position: absolute; 
+    color: rgb(255, 255, 255);
+    top:15%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.b12{
+    position: absolute;
+    right: 45%;
+    top:40%;
+}
+.b1,.b2{
+    cursor: pointer;
+    padding: 15px;
+    margin:10px;
+    background: none;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #d6e3eb;
+    padding: 7px 10px;
+    color:white;
+    border-radius: 10px;
+    transition: 0.50s; 
+    width: 190px;
+    
+    
+}
+.b34{
+    position: absolute; 
+    left:50%;
+    top:40%;
+}
+.b3,.b4{
+    cursor: pointer;
+    padding: 15px;
+    margin:10px;
+    background: none;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #d6e3eb;
+    padding: 7px 10px;
+    color:white;
+    border-radius: 10px;
+    transition: 0.50s; 
+    width: 190px;
+}
+.b1:hover,.b2:hover,.b3:hover,.b4:hover{
+    background: #221456;
+
+}
+/* {% load static %} */
+body{
+    /* background-image: url("image\klim-musalimov-S9XbyS7ylf0-unsplash.jpg"); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
